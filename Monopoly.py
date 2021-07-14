@@ -1,5 +1,7 @@
 import random
 
+#test
+
 #Monoply board is represented by numbers with 0 being Go and 39 being Boardwalk
 #Starting position for the game is on Go (0)
 position = 0
