@@ -7,6 +7,13 @@ position = 0
 #Array to store the number of times that tile has been landed on
 tile = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+#names of the properties
+name1 = ["Go","Mediterranean Avenue", "Community Chest", "Baltic Avenue", "Income Tax", "Reading Railroad", "Oriental Avenue", "Chance", "Vermont Avenue", "Connecticut Avenue"]
+name2 = ["Jail", "St. Charles Place", "Electric Company", "States Avenue", "Virginia Avenue", "Pennsylvania Railroad", "St. James Place", "Community Chest", "Tennessee Avenue", "New York Avenue"]
+name3 = ["Free Parking", "Kentucky Avenue", "Chance", "Indiana Avenue", "Illinois Avenue", "B & O Railroad", "Atlantic Avenue", "Ventnor Avenue", "Water Works", "Marvin Gardens"]
+name4 = ["Go to Jail","Pacific Avenue", "North Carolina Avenue", "Community Chest", "Pennsylvania Avenue", "Short Line", "Chance", "Park Place", "Luxury Tax", "Boardwalk"]
+name = name1 + name2 + name3 + name4
+
 #Count how many doubles have been roled
 numDouble = 0
 
@@ -90,10 +97,13 @@ for i in range(1, numIter + 1):
         position = 10
         numDouble = 0
 
-    #Counting the number of times that tile has been landed on
+    #Counting the number of times tile has been landed on
     tile[position] = tile[position] + 1
 
 
 for x in range(1,41):
     tileNumber = x - 1
-    print(tile[tileNumber])
+    space = ""
+    for y in range (0, (21 - len(name[tileNumber]))):
+        space += " "
+    print(str(name[tileNumber])+ ": " + space + str(tile[tileNumber]))
