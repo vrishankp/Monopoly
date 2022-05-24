@@ -100,10 +100,28 @@ for i in range(1, numIter + 1):
     #Counting the number of times tile has been landed on
     tile[position] = tile[position] + 1
 
+# Find the maximum length of number
+maxLen = 0;
+for x in range(1,41):
+    tileNumber = x - 1
+    toStr = str(tile[tileNumber])
+    toStrLen = len(toStr)
+    if (toStrLen > maxLen):
+        maxLen = toStrLen
+
+# Print the output
+print("          Name        Count  Percent")
+print("-------------------------------------")
 
 for x in range(1,41):
     tileNumber = x - 1
     space = ""
     for y in range (0, (21 - len(name[tileNumber]))):
         space += " "
-    print(str(name[tileNumber])+ ": " + space + str(tile[tileNumber]))
+
+    endSpace = "";
+    for z in range (0, maxLen + 2 - len(str(tile[tileNumber]))):
+        endSpace += " ";
+
+    print(str(name[tileNumber])+ ": " + space + str(tile[tileNumber]) + endSpace, end='')
+    print(" " + str(round((tile[tileNumber] / numIter) * 100, 2)) + "%")
