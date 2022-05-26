@@ -110,8 +110,8 @@ for x in range(1,41):
         maxLen = toStrLen
 
 # Print the output
-print("          Name        Count  Percent")
-print("-------------------------------------")
+print("          Name         Count  Percent")
+print("-" * 37)
 
 for x in range(1,41):
     tileNumber = x - 1
@@ -124,4 +124,4 @@ for x in range(1,41):
         endSpace += " ";
 
     print(str(name[tileNumber])+ ": " + space + str(tile[tileNumber]) + endSpace, end='')
-    print(" " + str(round((tile[tileNumber] / numIter) * 100, 2)) + "%")
+    print(" " + f"{round((tile[tileNumber] / numIter) * 100, 2): .2f}" + "%")
