@@ -162,7 +162,7 @@ plt.bar(left, height, tick_label = tick_label,
         width = 0.5, color = color)
   
 # naming the x-axis
-plt.xlabel('Name')
+plt.xlabel('Name of tile')
 # naming the y-axis
 plt.ylabel('# of times the turn ended')
 # plot title
