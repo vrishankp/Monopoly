@@ -156,10 +156,13 @@ height = percent
 # labels for bars
 tick_label = name
 
-color = ['black', 'brown', 'black', 'brown', 'black', ]
+color = ['white', 'brown', 'white', 'brown', 'white', 'black', 'cyan', 'white', 'cyan', 'cyan']
+color += ['white', 'pink', 'black', 'pink', 'pink', 'black', 'orange', 'white', 'orange', 'orange']
+color += ['white', 'red', 'white', 'red', 'red', 'black', 'yellow', 'yellow', 'black', 'yellow']
+color += ['white', 'green', 'green', 'white', 'green', 'black', 'white', 'blue', 'white', 'blue']
 # plotting a bar chart
 plt.bar(left, height, tick_label = tick_label,
-        width = 0.5, color = color)
+        width = 0.75, color = color, edgecolor='black')
   
 # naming the x-axis
 plt.xlabel('Name of tile')
