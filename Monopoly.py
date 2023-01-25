@@ -29,11 +29,33 @@ numDouble = 0
 
 #How many dice rolls you want to simulate
 numIter = int(input("Enter the number of dice roles to simulate: "))
-
+count = 0
+rotate = 0
 for i in range(1, numIter + 1):
     # display status
+    numIteLen = len(str(numIter))
+    iLen = len(str(i))
+
+    padding = " " * (numIteLen - iLen)
+    count += 1
+
+    if (count >= 100000):
+        rotate += 1
+        count = 0
+
+    symbol = rotate % 4
+    if (symbol == 0):
+        statusBar = "-"
+    elif (symbol == 1):
+        statusBar = "\\"
+    elif (symbol == 2):
+        statusBar = "|"
+    else:
+        statusBar = "/"
+
     percent = round(i/numIter * 100, 2)
-    print(str(i) + " out of " + str(numIter) + " (" + str(percent) + "%)", end = "\r")
+    displayPercent = f"{percent:.2f}"
+    print(padding + str(i) + " out of " + str(numIter) + " (" + displayPercent + "%)   " + statusBar + "   ", end = "\r")
 
     #simulate dice rolls
     d1 = random.randint(1, 6)
