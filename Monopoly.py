@@ -31,6 +31,10 @@ numDouble = 0
 numIter = int(input("Enter the number of dice roles to simulate: "))
 
 for i in range(1, numIter + 1):
+    # display status
+    percent = round(i/numIter * 100, 2)
+    print(str(i) + " out of " + str(numIter) + " (" + str(percent) + "%)", end = "\r")
+
     #simulate dice rolls
     d1 = random.randint(1, 6)
     d2 = random.randint(1, 6)
